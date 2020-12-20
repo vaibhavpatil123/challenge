@@ -1,4 +1,4 @@
-![BankOfSpring](https://github.com/SystangoTechnologies/BankOfSpring/blob/master/src/main/resources/images/logo.png)
+![Account Manager](https://github.com/vaibhavpatil123/challenge/blob/master/)
 
 ## Account Manager
 Production ready maven based Spring Boot starter kit application with example cases of handling transactions with Spring.
@@ -12,12 +12,12 @@ Starter kit for booting up the development of a API oriented and transaction bas
 - **Lombok**          - Provides automated getter/setters
 - **Actuator**        - Application insights on the fly
 - **Spring Security** - Spring's security layer
-- **Devtools**        - Support Hot-Code Swapping with live browser reload
+- **Devtools**        - Code quality tools and integration services
 - **JJWT**            - JWT tokens for API authentication
 - **Swagger**         - In-built swagger2 documentation support
 - **Docker**          - Docker containers
 - **Junit**           - Unit testing framework
- - ** Tracing **      - https://zipkin.io/pages/quickstart.html
+- **Tracing**       -  Use distributed trace refer https://zipkin.io/pages/quickstart.html
 
 ## Application Structure
 
@@ -25,7 +25,7 @@ Starter kit for booting up the development of a API oriented and transaction bas
 The BankOfSpring application can be started using your favourite IDE and its run configuration support. If you are a terminal savvy, please use the following command -
 
 ````
-mvn spring-boot:run
+challenge [bootRun]
 ````
 
 ## Docker
@@ -35,7 +35,7 @@ BankOfSpring supports docker container out of the box. This boilerplate is meant
 
 To build a fresh image, use -
 ````
-docker build -t bankofspring .
+docker build -t account-manager-service-1.1 .
 ````
 To run the new image, use -
 ````
@@ -52,12 +52,12 @@ http://<host-name>:8080/swagger-ui.html
 There are multiple unit test cases written to cover the different components of the application. However there is a global application test suite file _**BankOfSpringApplicationUnitTests.java**_ that combines all the test cases in a logical manner to create a complete suite. It can be run from command prompt using the following command -
 
 ````
-mvn clean test -Dtest=BankOfSpringApplicationUnitTests
+challenge [test]
 ````
 
 ## Integration test cases
 There are multiple integration test cases written to cover the different components of the application. However there is a global application test suite file _**BankOfSpringApplicationTests.java**_ that combines all the test cases in a logical manner to create a complete suite. It can be run from command prompt using the following command -
-
+TBD 
 
 ## Contributors
 [vaibhav.h.patil](https://github.com/vaibhavpatil123)
