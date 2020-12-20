@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minkube-accounts-service
+  labels:
+    appdb: minkube-accounts-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      appdb: minkube-accounts-service
+  template:
+    metadata:
+      labels:
+        appdb: minkube-accounts-service
+    spec:
+      containers:
+        - name: minkube-accounts-service
+          image: minkube-accounts-service-1.1:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8081
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: minkube-accounts-service
+  labels:
+    app: minkube-accounts-service
+spec:
+  ports:
+    - port: 8081
+      protocol: TCP
+  selector:
+    appdb: minkube-accounts-service

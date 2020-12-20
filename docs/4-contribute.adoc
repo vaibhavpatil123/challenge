@@ -1,0 +1,7 @@
+= Contribute
+
+For any questions related Resource Service or Merge Requests approval please contact microservice mentors:
+
+- [Vaibhav Patil] (mailto:vaibhav.h.patil@gmail.com)
+
+

@@ -1,0 +1,7 @@
+== Dependencies
+
+=== Platform Services Dependency:
+
+Following components must be installed in order to deploy reconciler-manager.
+
+- Arango DB

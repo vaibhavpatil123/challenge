@@ -1,0 +1,21 @@
+== Changelog
+
+This changelog contains major functional and non-functional changes 
+including ones affecting Install and Upgrade procedures.
+
+Minor changes may not be included in this changelog.
+
+
+=== Release of component details
+
+Current Release version **Release R6**
+
+|===
+|Release Version |Sprint details |Features list
+
+|Account-manager-Service
+|R6
+|Basic rest apis supported
+|===
+
+

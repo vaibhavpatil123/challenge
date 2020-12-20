@@ -1,0 +1,5 @@
+= Architecture
+
+image::images/image-HighLevelArchitecture.png[Architecture]
+image::images/discovery-flow.png[SequenceDiagram]
+

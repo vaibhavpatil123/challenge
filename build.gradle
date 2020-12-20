@@ -1,0 +1,46 @@
+buildscript {
+  ext {
+    springBootVersion = '1.5.4.RELEASE'
+  }
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+repositories {
+  mavenCentral()
+}
+jar {
+  manifest {
+    attributes(
+            'Main-Class': 'com.db.awmd.challenge.DevChallengeApplication'
+    )
+  }
+}
+dependencies {
+  annotationProcessor("org.projectlombok:lombok")
+  compile("org.springframework.boot:spring-boot-starter-web")
+  compile("org.springframework.boot:spring-boot-starter-actuator")
+  compileOnly("org.projectlombok:lombok")
+  compile('io.springfox:springfox-swagger2:2.9.2')
+  compile('io.springfox:springfox-swagger-ui:2.9.2')
+  compile('org.springframework.cloud:spring-cloud-starter-zipkin:1.0.0.RELEASE')
+
+
+
+  testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+bootRun {
+  main = 'com.db.awmd.challenge.DevChallengeApplication'
+}

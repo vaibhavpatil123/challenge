@@ -1,0 +1,84 @@
+info:
+  app:
+    java:
+      version: 1.0
+    name: Account trsanaction Manager Service
+    type: Spring Boot
+server:
+  port: ${HTTP_PORT:8082}
+spring:
+  banner:
+    location: classpath:/banner.txt
+  profiles:
+    active:  ${SPRING_PROFILE:dev}
+  output.ansi.enabled: always
+  rabbitmq:
+    host:  ${HOST:localhost}
+  zipkin: #Traceabilty
+    enabled: ${ZIPKIN_ENABLE:true}
+    store:
+      type: mem
+    baseUrl: ${HOST_ZIPKIN:http://localhost:9411}
+    sender:
+      type: web
+  sleuth: #Traceabilty
+    sampler:
+      probability: 1.0
+    enabled: true
+  application:
+    name: account-manager
+  cache:
+    type: none
+
+
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health,info,beans,env
+#logging
+logging:
+  level:
+    com.db.awmd.challenge: ${LOG_LEVEL:INFO}
+    org.springframework.boot.autoconfigure.security.servlet: ${LOG_LEVEL:WARN}
+    level.org.springframework.cloud: DEBUG
+  pattern:
+    console: ${LOG_LEVEL:"%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"}
+#Application params
+account:
+  min_bal_limit: ${APP_ENV_MIN_BAL:1}
+
+---
+# Insecure configuration, when SPRING_PROFILES_ACTIVE = dev
+spring:
+  profiles: 'dev'
+  zipkin:
+    enabled: ${ZIPKIN_ENABLED:false}
+
+
+---
+# Secure configuration, when SPRING_PROFILES_ACTIVE = prod
+spring:
+  profiles: 'prod'
+  zipkin:
+    enabled: ${ZIPKIN_ENABLED:true}
+security:
+  oauth2:
+    client:
+      access-token-uri: ${IDP_URL:""}/token
+      client-id: ${IDP_CLIENT_ID:""}
+      client-secret: ${IDP_CLIENT_SECRET:""}
+      grant-type: client_credentials
+    resource:
+      tokenInfoUri: any
+      identity-provider: mitre
+      identity-provider-url: ${IDP_URL:""}
+    http:
+      client-connections:
+        maxTotalConnections: ${REST_CLIENT_CONNECTIONS:800}
+        maxConnectionsPerRoute: ${MAX_PER_ROUTE_REST_CLIENT_CONNECTIONS:700}
+      timeout:
+        connectionTimeout: ${CONNECTION_TIMEOUT:30000}
+        socketReadTimeout: ${SOCKET_TIMEOUT:480000}
+        connectionRequestTimeout: ${CONNECTION_REQUEST_TIMEOUT:30000}

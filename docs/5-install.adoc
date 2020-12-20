@@ -1,0 +1,12 @@
+== Installation
+
+Service is designed to run inside docker container platform.
+
+=== Deployment application using  Minikube cluster
+Requirements :
+Minikube installed and running on machine https://minikube.sigs.k8s.io/docs/start/[minikube]
+Docker installed and running on machine https://hub.docker.com/editions/community/docker-ce-desktop-windows[windows docker]
+
+
+=== Deployment of using  openshift template
+

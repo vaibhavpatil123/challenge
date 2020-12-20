@@ -1,0 +1,32 @@
+== Build
+
+Build process for optical-manager is below:
+
+* Links to git repositories which consists of configurations with appropriate branch can be passed in during build process;
+
+
+image::docs/images/build.png[Build parameters]
+image::images/build.png[Build parameters]
+image::build.png[Build parameters]
+
+List of build parameters:
+
+|===
+|Parameter Name | Example Value  |Description
+
+|SERVER
+| https://git.com
+|Git source server
+
+|REPOSITORY_NAME
+|Repository name
+|PROD./accont-manager-service
+
+|LOCATION
+| feature/master
+|Branch for build
+|===
+
+
+* In during build process service also is published into artifactory together with all required configurations, it allows to execute service manually;
+* In during build process documentation is published into artifactory in pdf format

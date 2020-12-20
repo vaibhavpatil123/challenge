@@ -1,0 +1,41 @@
+
+= Account Manager Service
+
+
+
+== Introduction
+
+
+Entry point to for user transaction operations.
+
+Supports below features:
+
+- Support rest apis to access user account details
+
+
+
+|===
+|*Language Used.* |*Stateful/Stateless* |*Persistent storage*
+|Java
+|Stateless
+|N/A
+
+|===
+
+== Dependencies
+
+=== Dependency:
+
+1. Mention database dependency or other service dependency
+
+
+== Architecture
+
+
+Following diagram captures the micro services based architecture supported in current version.
+
+
+image::images/image-HighLevelArchitecture.png[Architecture]
+image::image-HighLevelArchitecture.png[Architecture]
+image::images/discovery-flow.png[SequenceDiagram]
+image::flow-flow.png[SequenceDiagram]

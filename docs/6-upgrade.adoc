@@ -1,0 +1,6 @@
+== Upgrade
+
+Upgrade should be performed using standart Netcracker`s Openshift Deployer job with the same way as installation:
+
+* DP.Pub.Solution_chain_v1 has parameter `OpenShift.Deploy` which can have value `Update`;
+* L2CI job has parameter `FORCE_DEPLOY` which can have values `false` which means only changed services will be applied;
