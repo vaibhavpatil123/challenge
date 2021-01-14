@@ -1,15 +1,15 @@
 # Dev guide
 
-## IDE configure checkstyle for code 
+## IDE configuration for- checkstyle 
 Install code style plugin - https://plugins.jetbrains.com/plugin/1065-checkstyle-idea
 
-## IDE configure findbugs plugin
+## IDE configuration for-  findbugs plugin
 https://plugins.jetbrains.com/plugin/14014-spotbugs
 
-## IDE configure auto code formatter which will fix lots of checkstyle issues
+## IDE configuration for-  formatter which will fix lots of checkstyle issues
 Formatted by Jindent --- http://www.jindent.com
 
-## IDE configure Sonar Lint 
+## IDE configuration for-  Sonar Lint 
 1. option in DEV mode 
 https://plugins.jetbrains.com/plugin/7973-sonarlint
 2. we can integrate it with centralised development service and put al configs/ rule file at single place

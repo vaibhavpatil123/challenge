@@ -42,4 +42,4 @@ logging:
     level.org.springframework.cloud: DEBUG
 #Application params
 account:
-  min_bal_limit : 10
+  min_bal_limit : 1

@@ -5,9 +5,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AppUtilityTest {
-  @Test
-  public void test_getCurrentDate() {
-      String value=AppUtility.getCurrentDate();
-      assertNotNull(value);
-  }
+    @Test
+    public void test_getCurrentDate() {
+        String value = AppUtility.getCurrentDate();
+
+        assertNotNull(value);
+    }
 }
+
+
+//~ Formatted by Jindent --- http://www.jindent.com
